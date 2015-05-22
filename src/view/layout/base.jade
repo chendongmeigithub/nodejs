@@ -1,0 +1,51 @@
+//- base layout
+include ../include/mixin.jade
+doctype html
+<!--[if IE 7 ]><html class="ie ie7" lang="zh-CN"><![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="zh-CN"><![endif]-->
+<!--[if IE 9 ]><html class="ie ie9" lang="zh-CN"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="zh-CN">
+<!--<![endif]-->
+head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no")
+    //强制360浏览器模式为极速模式
+    meta(name="renderer" content="webkit")
+    meta(http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1")
+    block title
+    title #{title}
+    meta(name="keywords" content="#{keywords}")
+    meta(name="description" content="#{description}")
+    block style
+    <!--[if lt IE 9]>
+    script.
+        (function() {
+            if (! 
+            /*@cc_on!@*/
+            0) return;
+            var e = "abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, main, menu, meter, nav, output, progress, section, time, video, address".split(', ');
+            var i= e.length;
+            while (i--){
+             document.createElement(e[i])
+            } 
+        })();
+    <![endif]-->
+block body
+body(class="#{bodyClass}")
+    block main
+    block script
+    <!--[if lt IE 9]>
+    +scripts(['http://libs.useso.com/js/jquery/1.11.0/jquery.min.js'])
+    script.
+        if (navigator.userAgent.indexOf("MSIE 6") > 0 || navigator.userAgent.indexOf("MSIE 7") > 0){
+            alert("抱歉，本站不支持IE7及以下浏览器！");
+        }
+    <![endif]-->
+    <!--[if (gte IE 9)|!(IE)]><!-->
+    +scripts(['http://libs.useso.com/js/jquery/2.1.0/jquery.min.js'])
+    <!--<![endif]-->
+    //- lazyload
+    +scripts(['http://libs.useso.com/js/lazyload/2.0.3/lazyload.js'])
+    +scripts(['http://libs.useso.com/js/angular.js/1.2.9/angular.min.js'])
+</html>

@@ -1,0 +1,7 @@
+header
+    .logo
+        img(src="http://s0.hao123img.com/res/img/logo/logonew1.png")
+    nav(ng-app="myNav")
+        ul
+            li(ng-repeat="nav in navData")
+                a(href="{{nav.href}}") {{nav.name}}

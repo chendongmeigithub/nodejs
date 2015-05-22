@@ -1,0 +1,11 @@
+extends ./layout/common
+block title
+    - var title = '日历'
+    - var keywords = '日历显示'
+    - var description = '使用js与css实现日历显示'
+block style
+    +styles(['css/index.css'])
+block body
+    - var bodyClass = 'index'
+append content
+    .main.clearfix 123

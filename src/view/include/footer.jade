@@ -1,0 +1,13 @@
+footer
+    ul(ng-app="linkExchange").linkExchange
+        li(ng-repeat="link in linkList")
+            a(href="{{link.href}}") {{link.name}}
+    ul(ng-app="myInfo").myInfo
+        li(ng-repeat="info in infoList")
+            a(href="{{info.href}}") {{info.name}}
+    .copyright
+        .message 骑士网,WEB前端开发综合型网站，汇聚各种前端技术，为前端开发人员提供各种学习平台。网站设计：文档介绍、页面演示、视频学习、资源下载等。
+        .con
+            span Copyright © <a href="http://www.programchen.com">programchen.com</a> All Rights Reserved
+            span
+                a(href="http://www.miitbeian.gov.cn")鄂ICP备15002483号-1
