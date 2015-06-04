@@ -1,745 +1,125 @@
-//清除标签样式
-@import './base/tag'
-
 //项目通用样式
 @import './base/base'
 
-
-html,
-body
-    background white
-    font-family 'Microsoft Yahei'
-    font-size 14px
-a
-    text-decoration none
-    transition color .2s
-    color #3
-    &:hover
-        color $orange
-i.required
-    color red
-    font-style normal
-a,button
-    cursor pointer
-input,select,textarea,button
-    outline none
-
-input:-webkit-autofill{
-	box-shadow (0 0 0 1000px red inset)
+/************************************清除标签样式start************************************/
+/** 清除内外边距 **/
+body, h1, h2, h3, h4, h5, h6, hr, p,
+blockquote, /* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+form, fieldset, legend, button, input, textarea, /* form elements 表单元素 */
+th, td, /* table elements 表格元素 */
+img/* img elements 图片元素 */{
+    border:medium none;
+    margin: 0;
+    padding: 0;
 }
-input:-webkit-autofill
-    box-shadow (0 0 0 1000px white inset)
+/** 设置默认字体 **/
+body,button, input, select, textarea {
+    font: 12px/1.5 Arial, Helvetica, sans-serif;
+}
+h1, h2, h3, h4, h5, h6 { font-size: 100%; }
+em{font-style:normal;}
+/** 重置列表元素 **/
+ul, ol { list-style: none; }
+/** 重置超链接元素 **/
+a { text-decoration: none; color:#333;}
+a:hover { text-decoration: none; color:#F40; }
+/** 重置图片元素 **/
+img{ border:0px;}
+/** 重置表格元素 **/
+table { border-collapse: collapse; border-spacing: 0; }
+/*清除浮动*/
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+* html .clearfix             { zoom: 1; } /* IE6 */
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+/************************************清除标签样式end************************************/
 
-table
-    border-collapse collapse
-    table-layout fixed
-    td
-        overflow hidden
-        text-overflow ellipsis
-        white-space nowrap
-img,
-input,
-select
-    vertical-align middle
-p
-    text-align justify
-/* do not group these rules */
-::-webkit-input-placeholder
-    color #ce
-::-moz-placeholder
-    color #ce
-:-ms-input-placeholder
-    color #ce
-.pesudo-placeholder
-    color #ce
-.orange
-    color $orange
-.main
-    width 994px
-    margin 0 auto
-    position relative
-.result-num
-    font-size 12px
-    display  inline-block
-    float right
-    position relative
-    height 29px
-    .page-num
-        position relative
-        top 4px
-        .current-page
-            color $orange
-    .button
-        display inline-block
-        font-size 0
-        margin-left 8px
-        button
-            height 25px
-            width 47px
-            border: 1px solid #e0e0e0;
-            background: #f
-            &.left-arrow
-                border-right none
-/**
- * 五角星组件
- * @author hon
- */
-.rank
-    width 180px
-    text-align center
-    border-radius 2px
-    &.bg
-        background-color #f0
-        padding-top 4px
-        padding-bottom 4px
-    ul
-        line-height 0
-    li
-        display inline-block
-        width 19px
-        background-image url(../image/rank-star.png)
-        background-size 100%
-        background-position 0 0
-        background-repeat no-repeat
-        padding 0 0!important
-        border none!important
-        &.light-star
-            background-position 0 100%
-    &.interactive
-        li
-            cursor pointer
-.blur-filter
-    -webkit-filter blur(3px)
-/**
- * Button 按钮样式
- * 包括button元素和a元素
- * 宽度默认根据窗口宽度取百分比, 实际需重新设置
- * @author
- */
-button.styled,
-a.styled
-    box-sizing border-box
-    background #f
-    font-size 13px
-    padding 0
-    display inline-block
-    width 18.0555555555%
-    height 26px
-    line-height @height
-    text-align center
-    transition background-color .5s, border-color .5s, color .5s
-    &:active
-        box-shadow 0 2px 5px 0 rgba(0,0,0,.1) inset
-        transform translate3d(0,1px,0)
-    /**
-     * 按钮尺寸，名称通常由高度决定的，宽度需要在特定的应用场景重写
-     */
-    &.big
-        middle-height(41px)
+
+/************************************设置首尾样式end************************************/
+body
+    font-family verdana,Microsoft YaHei,Tahoma,sans-serif
+    width 100%
+    padding 0px
+    margin 0px
+    font-size $s12
+    color $gray-bg
+    header
         width 100%
-    &.middle
-        middle-height(26px)
-        width 50%
-    &.small
-        middle-height(24px)
-        width 22.2222222222%
-    &.tiny
-        middle-height(16px)
-        width 20%
-    /**
-     * 橙色
-     */
-    //边框按钮
-    &.orange-outline
-        border 1px solid $orange
-        color $orange
-        &:active
-            background-color $orange-light
-        &.disabled
-            background-color #c6
-            border-color #b
-    //填充按钮
-    &.orange-filled
-        border 1px solid $orange
-        background-color $orange
-        color #f        
-        &:active
-            background-color $orange-dark
-            border-color $orange-dark
-        &.disabled
-            background-color #c6
-            border-color @background-color
-        &:hover
-            background-color $orange-light
-            border-color $orange-light
-        
-
-    /**
-     * 绿色
-     */
-    //边框按钮
-    &.green-outline
-        border 1px solid $green
-        color $green
-        &:active
-            background-color $green-light
-    //填充按钮
-    &.green-filled
-        border 1px solid $green
-        background-color $green
-        color #f        
-        &:active
-            background-color $green-light
-            border-color $green-light
-        &:hover
-            background-color $green-dark
-            border-color $green-dark
-    /**
-     * 白色
-     */
-    //边框按钮
-    &.white-outline
-        background-color white
-        border 1px solid $border-color
-        color $orange
-
-body > header
-    .top
-        background $gray-bg
-        font-family '宋体'
-        font-size 13px
-        a,span
-            middle-height(31px)
-            display inline-block
-        a
-            color #3
-            margin 0 5px
-            &.fav
-                background url(../image/fav-icon.png) left 7px no-repeat
-                padding-left 15px
-                margin-left 0
-            &.dollar,
-            &.en
-                margin-left 10px
-            
-            &.currency
-                border 1px solid $border-color
-                height 20px
-                width @height
-                line-height @height
-                text-align center
-                background-color white
-                font-family Arial
-
-            &.active
-                color $text-blue
-            &.customer-service
-                background url(../image/qq.png) left center no-repeat
-                padding-left 18px
-            
-            &:hover
-                color $orange
-        .follow
-            position relative
-            margin 0 5px
-            background url(../image/follow-drop-arrow.png) right center no-repeat
-            padding-right 15px
-            cursor pointer
-            a
-                margin 0
-            .qr-code
-                position absolute
-                left 0
-                top 30px
-                border 1px solid $border-color
-                padding 5px
-                z-index 20
-                background-color white
-                display none
-                line-height 15px
-                text-align center
-                color #6
-         .phone
-                background url(../image/tel-small.png) left 4px no-repeat
-                padding-left 25px
-                margin-left 10px
-        .split
-            font-style normal
-    .logo
-        a
-            display inline-block
-            font-size 0
-            vertical-align middle
-        .slogan
-            vertical-align middle
-            border-left 1px solid $border-color
-            padding-left 15px
-            margin-left 15px
-            height 48px
-            line-height 48px
-            display inline-block
-            font-size 18px
-            color #9
-                
-    > .main
-        margin-top 35px
-        margin-bottom 25px
-        .search
-            input
-                middle-height(38px)
-                border 1px solid $blue
-                width 322px
-                text-indent 5px
-                position relative
-                top -2px
-            button
-                height 40px
-                line-height 39px
-                border 1px solid $blue
-                padding 0
-                margin 0
-                font-size 14px
-                background $blue
-                position relative
-                z-index 5
-                color white
-                margin-left -4px
-                margin-top 6px
-                width 80px
-                &:hover
-                    background-color $dark-blue
-                    border-color $dark-blue
-        .cart
-            $cartBoxShadow = 0 0 8px rgba(0,0,0,.1)
-            position relative
-            margin-top 6px
-            span.goods-quantity
-                background $orange
-                border-radius 5px 5px 5px 0
-                color white
-                padding 0 7px
-                position absolute
-                height 17px
-                line-height 17px
-                font-size 12px
-                top -12px
-                left 25px
-                &:after
-                    position absolute
-                    width 0px
-                    height 0px
-                    content ''
-                    border-left 6px solid $orange
-                    border-bottom 6px solid transparent
-                    border-right 6px solid transparent
-                    left 0
-                    bottom -3px
-            &:hover
-               box-shadow $cartBoxShadow
-               > a
-                    height 41px
-                    border-bottom 0
-                    background-color white
-            
-            > a
-                border 1px solid #e7
-                width 118px
-                text-align center
-                color #3
-                middle-height(38px)
-                display inline-block
-                background-color #f6
-                position relative
-                z-index 1000
-                i
-                    background url(../image/cart-icon-small.png) center no-repeat
-                    display inline-block
-                    width 17px
-                    height 16px
-                    vertical-align middle
-                    margin -4px 5px 0 0
-            .items
-                display none
-                position absolute
-                background-color white
-                border 1px solid $border-color
-                z-index 999
-                top 40px
-                width 310px
-                right 0
-                box-shadow $cartBoxShadow
-                .empty 
-                    color #cd
-                    font-size 12px
-                    background url(../image/empty-cart.jpg) 20px center no-repeat
-                    padding 20px 0
-                    text-align center
-                    text-indent 50px
-                    padding 25px
-                .goods-list
-                    font-size 13px
-                    h3
-                        font-style 14px
-                        font-weight normal
-                        margin 15px 0 0 15px
-                        color #6
-                    li
-                        border-bottom 1px dashed #e
-                        padding 15px
-                        transition background-color .5s;
-                        &.last
-                            border-bottom 0
-                        a.img
-                            width 55px
-                            border 1px solid #d
-                            img
-                                width 100% 
-                        a.title
-                            width 112px
-                            margin 10px 0 0 10px
-                            font-size 13px
-                            color #6
-                            word-wrap break-word
-                            white-space pre-wrap
-                        .price-and-del
-                            width 100px
-                            margin-top 10px
-                            text-align right
-                            a
-                                display block
-                                color #6
-                                &:hover
-                                    color $orange
-                            i
-                                font-style normal
-                        &:hover
-                            background-color #ef
-                            a.title
-                                color $orange
-                    .cart-foot
-                        background-color #f5
-                        padding 15px
-                        .total
-                            margin-top 5px
-                        a#goto-cart
-                            middle-height(30px)
-                            width 70px
-                            text-align center
-                            color white
-    nav
-        
-        background-color $blue
-        .category
-            position relative
-            width 240px
-            > a 
-                display inline-block
-                width 100%
-                background-color #fcfcfd
-                middle-height(47px)
-                border 1px solid $border-color
-                margin-top -8px
-                color #3
-                font-size 18px
-                text-indent 20px
-                position relative
-                &:after
-                    position absolute
-                    right -9px
-                    content ''
-                    top -1px
-                    width 0
-                    height 0
-                    border-right 4px solid transparent
-                    border-bottom 4px solid $dark-blue
-                    border-left 4px solid $dark-blue
-                    border-top 4px solid transparent
-                i
-                    display inline-block
-                    width 20px
-                    height @width
-                    background #fcfcfd url(../image/category-bullet.png) center no-repeat 
-                    margin 13px 10px 0 0
-                    transition transform .3s
-            &.default-hide
-                .sub
-                    display none
-                > a
-                    i
-                        transform rotate(-90deg)
-            .sub
-                position absolute
-                width 240px
-                top 40px
-                border 1px solid $border-color
-                border-top 0
-                z-index 301
-                li
-                    a
-                        display block
-                        height 39px
-                        line-height 39px
-                        text-indent 20px 
-                        color #6
-                        background #fcfcfd url(../image/sub-arrow.png) 220px center no-repeat
-                        border:1px solid #fcfcfd
-                        position relative
-                        transition text-indent .1s
-                        font-size 14px
-                        z-index 400
-                    &.current
-                        a
-                            left -1px
-                            border 1px solid $text-blue
-                            text-indent 21px
-                            background white
-                            width 242px
-                            color $orange
-                            border-right 0
-                            text-indent 30px
-                            
-            .sub-categories
-                position absolute
-                left 242px
-                background white
-                z-index 300
-                width 720px
-                border 1px solid $text-blue  
-                padding 20px 30px
-                padding-right 0 
-                display none
-                .items
-                    width 530px
-                    border-right 1px solid $border-color
-                    li
-                        float left
-                        width 33.33333%
-                        a
-                            display block
-                            margin-right 10px
-                            middle-height(30px)
-                            color #6
-                        &:hover
-                            a
-                                color $orange
-                .logos
-                    width 185px
-                    li
-                        width 60%
-                        margin 0 auto
-                        middle-height(50px)
-                        border-bottom 1px dotted #c
-                        text-align center
-                        img
-                            max-width 100%
-                        &.last
-                            border-bottom 0
-                            
-                
-        .navigation
-            margin-left 250px
-            a
-                color white
-                display inline-block
-                middle-height(41px)
-                width 134px
-                text-align center
-                transition background .5s
-                font-size 14px
-                &.current-page
-                    background-color $dark-blue
-            .other
-                a
-                    width auto
-                    text-align right
-                    padding-left 25px
-                    background-position 23px center
-                    background-repeat no-repeat
-                    background-size 18px
-                    width 100px
-                    text-align center
-                    &:hover
-                        background-color $dark-blue
-                    &.custom
-                        background-image url(../image/custom.png)
-                    &.assistant
-                        background-image url(../image/find.png)
-            > a:hover
-                background-color $dark-blue
-                        
-.main-side
-    width 744px
-aside
-    width 240px
-    
-//面包屑
-.bread-thumb
-    middle-height(50px)
-    color #6
-    a
-        color #6
-    i
-        font-style normal
-        display inline-block
-        margin 0 5px
-        border-right none
-    a:hover,
-    a.current
-        color $orange
-
-body > footer
-    .articles
-        font-size 12px
-        border 1px solid $border-color
-        border-left 0
-        border-right 0
-        margin 20px 0
-        padding 25px 0 
-        h2
-            font-size 12px
-            color $text-blue
-            margin-bottom 15px
-        img.icon
-            width 33px
-            height @width
-            background #fcfcfd url(../image/footer-aritcel.png) 0 center no-repeat
-            margin-right 30px
-        .guide,
-        .pay-delivery,
-        .sale-support,
-        .problems,
-        .follow
-            border-right 1px solid $border-color
-            padding 0 40px
-        .follow
-            border 0
-            padding 0 34px
-            text-align center
-        
-        ul
-            width 50px
-            min-height 75px
-            li
-                float left
-                a
-                    font-size 12px
-                    display block
-                    middle-height(20px)
-                    margin 2px 0
-                    color #62
-                    transition border .5s
-                    border-bottom 1px solid white
-                    &:hover
-                        color $orange
-        .guide
-            padding-left 25px
-            ul
-                li
-                    margin-right 10px
-                    &.even
-                        margin-right 0
-        
-    .links,
-    .copyright,
-    .gov
-        text-align center
-    .gov
-        a
-            margin 0 5px
-            
-    .copyright
-        margin-top 8px
-    .gov
-        margin 15px 0 80px  0
-    .links
-        font-size 12px
-        
-        a
-            color #62
-            middle-height(20px)
-            display inline-block
-            transition border .5s
-            border-bottom 1px solid white
-            &:hover
-                color $orange
-        i
-            font-style normal
-            color #62
-            margin 0 8px
-            vertical-align top
-    .copyright
-        color #62
-
-/**
- * popbox
- */
-.popbox-container.mwstore 
-    .box
-        background-color white
-        border 1px solid #d
-        box-shadow (0 2px 25px 7.5px rgba(0,0,0,.1))
-        .close-popbox
-            background url('../image/popbox-close.png') center no-repeat
+        height $nav-height
+        background $black-bg
+        .container
+            width $container-width
+            height $nav-height
+            margin auto
             display block
-            position absolute
-            right 0
-            top 3px
-            width 30px
-            height @width
-        h1
-            font-size 15px
-            padding 10px
-            border-bottom 1px solid #d
-        .content
-            padding 20px
-            input#company-name
-                width 100%
-                height 30px
-                line-height @height
-                border 1px solid #d
-                box-size border-box
-                text-indent 5px
-            p.tip
-                background-repeat no-repeat
-                height 37px
-                line-height @height
-                text-indent 45px
-                &.warning
-                    background-image url('../image/tip-warning.png')
-            .rank-data
-                color #fe5e50
-                input
-                    width 10px
-                    text-align center
-                    border 0
-        
-            h3
-                font-size 13px
-                font-weight normal
-            textarea
-                width 348px
-                border 1px solid #d
-                resize none
-                height 100px
-                margin 5px 0 10px 0
-                padding 5px
-        .footer
-            border 0
-            padding 0 20px 20px 20px
-            text-align right
-            button
-                padding 0 10px
-                height 32px
-                line-height @height
-                border-radius $radius
-                background-color #f5
-                border 1px solid #d
-                margin-right 10px
-                &:last-child
-                    margin-right 0
-        
-
-        
-
+            .logo
+                width 200px
+                height $nav-height
+                float left
+                display inline-block
+                img
+                    height 50px
+                    margin-top 5px
+            nav
+                float left
+                display inline-block
+                ul
+                    li
+                        width $nav-width-li
+                        height $nav-height
+                        font-size $nav-font
+                        text-align center
+                        display inline-block
+                        a
+                            width $nav-width-li
+                            height $nav-height
+                            line-height $nav-height
+                            color $white
+                            display inline-block
+                            &.active
+                                background $blue
+                        a:hover
+                            background $black-hover
+    footer
+        width 100%
+        height $footer-height
+        background $black-bg
+        .container
+            width $container-width
+            height $footer-height
+            padding-top $s15
+            margin auto
+            display block
+            color $black-font
+            a
+                color $black-font
+                &:hover
+                    color $orange
+            .linkExchange
+                width 160px
+            ul
+                width 15%
+            .copyright
+                width 40%
+                .message
+                    display block
+                    text-indent 2em
+                .con
+                    margin-top $s20
+                    span
+                        text-align right
+                        display block
+    .main
+        width $container-width
+        min-height 60*$s10
+/************************************设置首尾样式end************************************/
     
                     

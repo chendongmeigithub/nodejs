@@ -1,9 +1,11 @@
 
 <header>
-  <div class="logo"><img src="http://s0.hao123img.com/res/img/logo/logonew1.png"/></div>
-  <nav ng-app="myNav">
-    <ul>
-      <li ng-repeat="nav in navData"><a href="{{nav.href}}">{{nav.name}}</a></li>
-    </ul>
-  </nav>
+  <div class="container">
+    <div class="logo"><img src="image/logo.png"/></div>
+    <nav ng-controller="navController">
+      <ul>
+        <li ng-repeat="info in infoList"><a href="{{info.link}}">{{info.name}}</a></li>
+      </ul>
+    </nav>
+  </div>
 </header>

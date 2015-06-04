@@ -8,7 +8,9 @@ doctype html
 <html lang="zh-CN">
 <!--<![endif]-->
 head
-    meta(charset="UTF-8")
+    meta(charset="utf-8")
+    link(href="favicon.ico" type="image/x-icon" rel=icon)
+    link(href="favicon.ico" type="image/x-icon" rel="shortcut icon")
     meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no")
     //强制360浏览器模式为极速模式
     meta(name="renderer" content="webkit")
@@ -32,7 +34,7 @@ head
         })();
     <![endif]-->
 block body
-body(class="#{bodyClass}")
+body(class="#{bodyClass}" ng-app="#{ngApp}")
     block main
     block script
     <!--[if lt IE 9]>
@@ -48,4 +50,6 @@ body(class="#{bodyClass}")
     //- lazyload
     +scripts(['http://libs.useso.com/js/lazyload/2.0.3/lazyload.js'])
     +scripts(['http://libs.useso.com/js/angular.js/1.2.9/angular.min.js'])
+    +scripts(['script/index.js'])
+    +scripts(['script/data.js'])
 </html>

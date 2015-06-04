@@ -5,7 +5,9 @@
 <html lang="zh-CN">
 <!--<![endif]-->
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
+  <link href="favicon.ico" type="image/x-icon">
+  <link href="favicon.ico" type="image/x-icon" rel="shortcut icon">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
   <!--强制360浏览器模式为极速模式-->
   <meta name="renderer" content="webkit">
@@ -26,25 +28,29 @@
     })();
   </script><![endif]-->
 </head>
-<body class="undefined">
+<body ng-app="undefined" class="undefined">
   <header>
-    <div class="logo"><img src="http://s0.hao123img.com/res/img/logo/logonew1.png"></div>
-    <nav ng-app="myNav">
-      <ul>
-        <li ng-repeat="nav in navData"><a href="{{nav.href}}">{{nav.name}}</a></li>
-      </ul>
-    </nav>
+    <div class="container">
+      <div class="logo"><img src="image/logo.png"></div>
+      <nav ng-controller="navController">
+        <ul>
+          <li ng-repeat="info in infoList"><a href="{{info.link}}">{{info.name}}</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
   <footer>
-    <ul ng-app="linkExchange" class="linkExchange">
-      <li ng-repeat="link in linkList"><a href="{{link.href}}">{{link.name}}</a></li>
-    </ul>
-    <ul ng-app="myInfo" class="myInfo">
-      <li ng-repeat="info in infoList"><a href="{{info.href}}">{{info.name}}</a></li>
-    </ul>
-    <div class="copyright">
-      <div class="message">骑士网,WEB前端开发综合型网站，汇聚各种前端技术，为前端开发人员提供各种学习平台。网站设计：文档介绍、页面演示、视频学习、资源下载等。</div>
-      <div class="con"><span>Copyright © <a href="http://www.programchen.com">programchen.com</a> All Rights Reserved</span><span><a href="http://www.miitbeian.gov.cn">鄂ICP备15002483号-1</a></span></div>
+    <div class="container">
+      <ul ng-controller="aboutController" class="myInfo fl">
+        <li ng-repeat="info in infoList"><a href="{{info.link}}">{{info.name}}</a></li>
+      </ul>
+      <ul ng-controller="linkController" class="linkExchange fl">
+        <li ng-repeat="info in infoList"><a href="{{info.link}}">{{info.name}}</a></li>
+      </ul>
+      <div class="copyright fr">
+        <div class="message">骑士网,WEB前端开发综合型网站，汇聚各种前端技术，为前端开发人员提供各种信息资源。内容涉及：学习引导、开发工具、学习服务、案例演示、等诸多前端产业。</div>
+        <div class="con"><span>Copyright © <a href="http://www.programchen.com">programchen.com</a> All Rights Reserved</span><span><a href="http://www.miitbeian.gov.cn">鄂ICP备15002483号-1</a></span></div>
+      </div>
     </div>
   </footer><!--[if lt IE 9]>
   <script src="http://libs.useso.com/js/jquery/1.11.0/jquery.min.js"></script>
@@ -57,4 +63,6 @@
   <script src="http://libs.useso.com/js/jquery/2.1.0/jquery.min.js"></script><!--<![endif]-->
   <script src="http://libs.useso.com/js/lazyload/2.0.3/lazyload.js"></script>
   <script src="http://libs.useso.com/js/angular.js/1.2.9/angular.min.js"></script>
+  <script src="script/index.js"></script>
+  <script src="script/data.js"></script>
 </body></html>

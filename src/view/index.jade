@@ -1,11 +1,16 @@
 extends ./layout/common
 block title
-    - var title = '日历'
-    - var keywords = '日历显示'
-    - var description = '使用js与css实现日历显示'
+    - var title = '首页'
+    - var keywords = '骑士网'
+    - var description = '骑士网,WEB前端开发综合型网站，汇聚各种前端技术，为前端开发人员提供各种学习平台。网站设计：文档介绍、页面演示、视频学习、资源下载等'
 block style
     +styles(['css/index.css'])
 block body
     - var bodyClass = 'index'
+    - var ngApp="index"
 append content
-    .main.clearfix 123
+    .main.clearfix
+        aside.statistics 统计信息
+        .main-con
+            .fl.con
+            aside.fr
