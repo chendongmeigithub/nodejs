@@ -1,8 +1,8 @@
 header
     .container
         .logo
-            img(src="image/logo.png")
-        nav(ng-controller="navController")
+            img(src="image/logo.svg")
+        nav(ng-controller="navController" id="nav")
             ul
                 li(ng-repeat="info in infoList")
                     a(href="{{info.link}}") {{info.name}}

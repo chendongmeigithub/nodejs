@@ -1,8 +1,8 @@
 
 <header>
   <div class="container">
-    <div class="logo"><img src="image/logo.png"/></div>
-    <nav ng-controller="navController">
+    <div class="logo"><img src="image/logo.svg"/></div>
+    <nav ng-controller="navController" id="nav">
       <ul>
         <li ng-repeat="info in infoList"><a href="{{info.link}}">{{info.name}}</a></li>
       </ul>

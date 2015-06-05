@@ -1,2 +1,55 @@
 //引入公共样式
 @import 'common'
+.index
+  .main
+    margin-top $s15
+    aside
+      width 100%
+      display block
+      color $black-font
+      span
+        font-size 18px
+        font-weight 700
+        color $black-bg
+    .main-con
+      width 100%
+      margin-top $s15
+      .fl.con
+        width 74%
+        object
+          width 888px
+          height 300px
+          display block
+          &.banner
+            position relative
+            overflow aut
+            li
+              list-style none
+              float left
+              img
+                width 888px
+                height 300px
+                display inline-block
+            span
+              width 30px
+              height 50px
+              position absolute
+              opacity 0.4
+              z-index 7
+              background url(../image/indexsprites.png) no-repeat #fff
+              top 125px
+              &.prev
+                background-position 0 -110px
+                left 0
+                border-top-right-radius 5px
+                border-bottom-right-radius 5px
+              &.next
+                background-position -40px -110px
+                right 0
+                border-top-left-radius 5px
+                border-bottom-left-radius 5px
+            span:hover
+              opacity 1
+      aside.fr
+        width 25%
+

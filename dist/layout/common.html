@@ -1,8 +1,8 @@
-<!DOCTYPE html><!--[if IE 7 ]><html class="ie ie7" lang="zh-CN"><![endif]-->
-<!--[if IE 8 ]><html class="ie ie8" lang="zh-CN"><![endif]-->
-<!--[if IE 9 ]><html class="ie ie9" lang="zh-CN"><![endif]-->
+<!DOCTYPE html><!--[if IE 7 ]><html class="ie ie7 no-js" lang="zh-CN"><![endif]-->
+<!--[if IE 8 ]><html class="ie ie8no-js" lang="zh-CN"><![endif]-->
+<!--[if IE 9 ]><html class="ie ie9no-js" lang="zh-CN"><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!-->
-<html lang="zh-CN">
+<html class="no-js" lang="zh-CN">
 <!--<![endif]-->
 <head>
   <meta charset="utf-8">
@@ -14,7 +14,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
   <title></title>
   <meta name="keywords" content="undefined">
-  <meta name="description" content="undefined"><!--[if lt IE 9]>
+  <meta name="description" content="undefined">
+  <link rel="stylesheet" href="http://libs.useso.com/js/bootstrap/3.2.0/css/bootstrap.min.css"/>
+  <script src="http://libs.useso.com/js/modernizr/2.8.2/modernizr.min.js"></script>
+  <script src="http://libs.useso.com/js/angular.js/1.2.9/angular.min.js"></script><!--[if lt IE 9]>
   <script>
     (function() {
         if (! 
@@ -31,8 +34,8 @@
 <body ng-app="undefined" class="undefined">
   <header>
     <div class="container">
-      <div class="logo"><img src="image/logo.png"></div>
-      <nav ng-controller="navController">
+      <div class="logo"><img src="image/logo.svg"></div>
+      <nav ng-controller="navController" id="nav">
         <ul>
           <li ng-repeat="info in infoList"><a href="{{info.link}}">{{info.name}}</a></li>
         </ul>
@@ -61,8 +64,6 @@
   </script><![endif]-->
   <!--[if (gte IE 9)|!(IE)]><!-->
   <script src="http://libs.useso.com/js/jquery/2.1.0/jquery.min.js"></script><!--<![endif]-->
+  <script src="http://libs.useso.com/js/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   <script src="http://libs.useso.com/js/lazyload/2.0.3/lazyload.js"></script>
-  <script src="http://libs.useso.com/js/angular.js/1.2.9/angular.min.js"></script>
-  <script src="script/index.js"></script>
-  <script src="script/data.js"></script>
 </body></html>

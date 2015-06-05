@@ -1,11 +1,11 @@
 //- base layout
 include ../include/mixin.jade
 doctype html
-<!--[if IE 7 ]><html class="ie ie7" lang="zh-CN"><![endif]-->
-<!--[if IE 8 ]><html class="ie ie8" lang="zh-CN"><![endif]-->
-<!--[if IE 9 ]><html class="ie ie9" lang="zh-CN"><![endif]-->
+<!--[if IE 7 ]><html class="ie ie7 no-js" lang="zh-CN"><![endif]-->
+<!--[if IE 8 ]><html class="ie ie8no-js" lang="zh-CN"><![endif]-->
+<!--[if IE 9 ]><html class="ie ie9no-js" lang="zh-CN"><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!-->
-<html lang="zh-CN">
+<html class="no-js" lang="zh-CN">
 <!--<![endif]-->
 head
     meta(charset="utf-8")
@@ -20,6 +20,9 @@ head
     meta(name="keywords" content="#{keywords}")
     meta(name="description" content="#{description}")
     block style
+    +styles(['http://libs.useso.com/js/bootstrap/3.2.0/css/bootstrap.min.css'])
+    +scripts(['http://libs.useso.com/js/modernizr/2.8.2/modernizr.min.js'])
+    +scripts(['http://libs.useso.com/js/angular.js/1.2.9/angular.min.js'])
     <!--[if lt IE 9]>
     script.
         (function() {
@@ -36,7 +39,6 @@ head
 block body
 body(class="#{bodyClass}" ng-app="#{ngApp}")
     block main
-    block script
     <!--[if lt IE 9]>
     +scripts(['http://libs.useso.com/js/jquery/1.11.0/jquery.min.js'])
     script.
@@ -46,10 +48,9 @@ body(class="#{bodyClass}" ng-app="#{ngApp}")
     <![endif]-->
     <!--[if (gte IE 9)|!(IE)]><!-->
     +scripts(['http://libs.useso.com/js/jquery/2.1.0/jquery.min.js'])
+
     <!--<![endif]-->
-    //- lazyload
+    +scripts(['http://libs.useso.com/js/bootstrap/3.2.0/js/bootstrap.min.js'])
     +scripts(['http://libs.useso.com/js/lazyload/2.0.3/lazyload.js'])
-    +scripts(['http://libs.useso.com/js/angular.js/1.2.9/angular.min.js'])
-    +scripts(['script/index.js'])
-    +scripts(['script/data.js'])
+    block script
 </html>

@@ -335,8 +335,8 @@ body {
   width: 100%;
   padding: 0px;
   margin: 0px;
-  font-size: 1rem;
-  color: #f1f1f1;
+  font-size: 14px;
+  color: #333;
 }
 body header {
   width: 100%;
@@ -394,10 +394,10 @@ body footer .container {
   padding-top: 1.25rem;
   margin: auto;
   display: block;
-  color: #999;
+  color: #666;
 }
 body footer .container a {
-  color: #999;
+  color: #666;
 }
 body footer .container a:hover {
   color: #ff5a00;
@@ -425,4 +425,70 @@ body footer .container .copyright .con span {
 body .main {
   width: 1200px;
   min-height: 49.999999999999986rem;
+  margin: auto;
+}
+.index .main {
+  margin-top: 1.25rem;
+}
+.index .main aside {
+  width: 100%;
+  display: block;
+  color: #666;
+}
+.index .main aside span {
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+}
+.index .main .main-con {
+  width: 100%;
+  margin-top: 1.25rem;
+}
+.index .main .main-con .fl.con {
+  width: 74%;
+}
+.index .main .main-con .fl.con object {
+  width: 888px;
+  height: 300px;
+  display: block;
+}
+.index .main .main-con .fl.con object.banner {
+  position: relative;
+  overflow: aut;
+}
+.index .main .main-con .fl.con object.banner li {
+  list-style: none;
+  float: left;
+}
+.index .main .main-con .fl.con object.banner li img {
+  width: 888px;
+  height: 300px;
+  display: inline-block;
+}
+.index .main .main-con .fl.con object.banner span {
+  width: 30px;
+  height: 50px;
+  position: absolute;
+  opacity: 0.4;
+  z-index: 7;
+  background: url("../image/indexsprites.png") no-repeat #fff;
+  top: 125px;
+}
+.index .main .main-con .fl.con object.banner span.prev {
+  background-position: 0 -110px;
+  left: 0;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.index .main .main-con .fl.con object.banner span.next {
+  background-position: -40px -110px;
+  right: 0;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.index .main .main-con .fl.con object.banner span:hover {
+  opacity: 1;
+}
+.index .main .main-con aside.fr {
+  width: 25%;
 }

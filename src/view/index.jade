@@ -10,7 +10,44 @@ block body
     - var ngApp="index"
 append content
     .main.clearfix
-        aside.statistics 统计信息
+        aside.statistics
+            |&nbsp;最新统计：
+            span.total-note 123123
+            |&nbsp;篇优秀笔记，
+            span.total-example 123123
+            |&nbsp;个案例，
+            span.total-resource 123123
+            |&nbsp;份资源，
+            span.total-navigation 123123
+            |&nbsp;个推荐网站
         .main-con
             .fl.con
-            aside.fr
+                object.banner
+                    span(class="unslider-arrow prev")
+                    ul(ng-controller="imgController")
+                        li(ng-repeat="info in infoList")
+                            img(src="{{info.src}}" title="{{info.name}}")
+                    span(class="unslider-arrow next")
+            aside.fr c123123
+append script
+    +scripts(['script/index.js'])
+    +scripts(['script/data.js'])
+    +scripts(['script/unslider.js'])
+    script.
+        $(function() {
+            var unslider = $('.banner').unslider({
+                speed: 500,               //  The speed to animate each slide (in milliseconds)
+                delay: 3000,              //  The delay between slide animations (in milliseconds)
+                complete: function () {
+                },  //  A function that gets called after every slide animation
+                keys: true,               //  Enable keyboard (left, right) arrow shortcuts
+                dots: false,               //  Display dot navigation
+                fluid: false              //  Support responsive design. May break non-responsive designs
+            });
+            $('.unslider-arrow').click(function() {
+                var fn = this.className.split(' ')[1];
+
+                //  Either do unslider.data('unslider').next() or .prev() depending on the className
+                unslider.data('unslider')[fn]();
+            });
+        });

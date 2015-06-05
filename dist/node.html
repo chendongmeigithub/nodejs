@@ -17,8 +17,8 @@
   <meta name="description" content="骑士网,WEB前端开发综合型网站，汇聚各种前端技术，为前端开发人员提供各种学习平台。网站设计：文档介绍、页面演示、视频学习、资源下载等">
   <link rel="stylesheet" href="css/index.css"/>
   <link rel="stylesheet" href="http://libs.useso.com/js/bootstrap/3.2.0/css/bootstrap.min.css"/>
-  <script src="http://libs.useso.com/js/modernizr/2.8.2/modernizr.min.js"></script>
-  <script src="http://libs.useso.com/js/angular.js/1.2.9/angular.min.js"></script><!--[if lt IE 9]>
+  <link rel="stylesheet" href="css/index.css"/>
+  <script src="http://libs.useso.com/js/modernizr/2.8.2/modernizr.min.js"></script><!--[if lt IE 9]>
   <script>
     (function() {
         if (! 
@@ -35,7 +35,7 @@
 <body ng-app="index" class="index">
   <header>
     <div class="container">
-      <div class="logo"><img src="image/logo.svg"></div>
+      <div class="logo"><img src="image/logo.png"></div>
       <nav ng-controller="navController" id="nav">
         <ul>
           <li ng-repeat="info in infoList"><a href="{{info.link}}">{{info.name}}</a></li>
@@ -44,16 +44,10 @@
     </div>
   </header>
   <div class="main clearfix">
-    <aside class="statistics">&nbsp;最新统计：<span class="total-note">123123</span>&nbsp;篇优秀笔记，<span class="total-example">123123</span>&nbsp;个案例，<span class="total-resource">123123</span>&nbsp;份资源，<span class="total-navigation">123123</span>&nbsp;个推荐网站</aside>
+    <aside class="statistics">统计信息</aside>
     <div class="main-con">
-      <div class="fl con">
-        <object class="banner"><span class="unslider-arrow prev"></span>
-          <ul ng-controller="imgController">
-            <li ng-repeat="info in infoList"><img src="{{info.src}}" title="{{info.name}}"></li>
-          </ul><span class="unslider-arrow next"></span>
-        </object>
-      </div>
-      <aside class="fr">c123123</aside>
+      <div class="fl con"></div>
+      <aside class="fr"></aside>
     </div>
   </div>
   <footer>
@@ -77,29 +71,28 @@
     }
   </script><![endif]-->
   <!--[if (gte IE 9)|!(IE)]><!-->
-  <script src="http://libs.useso.com/js/jquery/2.1.0/jquery.min.js"></script><!--<![endif]-->
-  <script src="http://libs.useso.com/js/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <script src="http://libs.useso.com/js/jquery/2.1.0/jquery.min.js"></script>
+  <script src="http://libs.useso.com/js/bootstrap/3.2.0/js/bootstrap.min.js"></script><!--<![endif]-->
   <script src="http://libs.useso.com/js/lazyload/2.0.3/lazyload.js"></script>
-  <script src="script/index.js"></script>
-  <script src="script/data.js"></script>
-  <script src="script/unslider.js"></script>
+  <script src="http://libs.useso.com/js/angular.js/1.2.9/angular.min.js"></script>
   <script>
-    $(function() {
-        var unslider = $('.banner').unslider({
-            speed: 500,               //  The speed to animate each slide (in milliseconds)
-            delay: 3000,              //  The delay between slide animations (in milliseconds)
-            complete: function () {
-            },  //  A function that gets called after every slide animation
-            keys: true,               //  Enable keyboard (left, right) arrow shortcuts
-            dots: false,               //  Display dot navigation
-            fluid: false              //  Support responsive design. May break non-responsive designs
-        });
-        $('.unslider-arrow').click(function() {
-            var fn = this.className.split(' ')[1];
-    
-            //  Either do unslider.data('unslider').next() or .prev() depending on the className
-            unslider.data('unslider')[fn]();
-        });
+    var navigation = responsiveNav("#nav", { // Selector: The ID of the wrapper
+        animate: true, // Boolean: 是否启动CSS过渡效果（transitions）， true 或 false
+        transition: 400, // Integer: 过渡效果的执行速度，以毫秒（millisecond）为单位
+        label: "Menu", // String: Label for the navigation toggle
+        insert: "after", // String: Insert the toggle before or after the navigation
+        customToggle: "", // Selector: Specify the ID of a custom toggle
+        openPos: "relative", // String: Position of the opened nav, relative or static
+        jsClass: "js", // String: 'JS enabled' class which is added to <html> el
+        debug: false, // Boolean: Log debug messages to console, true 或 false
+        init: function () {
+        }, // Function: Init callback
+        open: function () {
+        }, // Function: Open callback
+        close: function () {
+        } // Function: Close callback
     });
   </script>
+  <script src="script/index.js"></script>
+  <script src="script/data.js"></script>
 </body></html>

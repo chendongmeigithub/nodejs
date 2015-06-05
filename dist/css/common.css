@@ -347,8 +347,8 @@ body {
   width: 100%;
   padding: 0px;
   margin: 0px;
-  font-size: 1rem;
-  color: #f1f1f1;
+  font-size: 14px;
+  color: #333;
 }
 body header {
   width: 100%;
@@ -406,10 +406,10 @@ body footer .container {
   padding-top: 1.25rem;
   margin: auto;
   display: block;
-  color: #999;
+  color: #666;
 }
 body footer .container a {
-  color: #999;
+  color: #666;
 }
 body footer .container a:hover {
   color: #ff5a00;
@@ -437,5 +437,6 @@ body footer .container .copyright .con span {
 body .main {
   width: 1200px;
   min-height: 49.999999999999986rem;
+  margin: auto;
 }
 /************************************设置首尾样式end************************************/

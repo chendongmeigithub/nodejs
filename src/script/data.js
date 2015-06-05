@@ -9,6 +9,7 @@ function getNav(){
     ];
     return nav;
 }
+
 /*********************底部信息***************************/
 function myInfo(){
     var info =   [
@@ -28,4 +29,13 @@ function linkExchange(){
         {name:"Cloud",link:"https://c9.io"}
     ];
     return link;
+}
+/*********************轮播图片***************************/
+function rollImg(){
+    var img =   [
+        {name:"Codepen",src:"image/1.svg"},
+        {name:"幕课网",src:"image/2.svg"},
+        {name:"菜鸟教程",src:"image/3.svg"}
+    ];
+    return img;
 }
