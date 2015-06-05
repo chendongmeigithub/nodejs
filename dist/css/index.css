@@ -489,6 +489,18 @@ body .main {
 .index .main .main-con .fl.con object.banner span:hover {
   opacity: 1;
 }
+.index .main .main-con .fl.con .title {
+  width: 100%;
+  height: 40px;
+  margin-top: 20px;
+  border-top: 2px solid #e4e4e4;
+}
+.index .main .main-con .fl.con .title li {
+  list-style: none;
+  width: 25%;
+  heihgt: 38px;
+  line-height: 38px;
+}
 .index .main .main-con aside.fr {
   width: 25%;
 }
